@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa de Finanzas para No Financieros</title>
+    <style>
+        :root {
+            --primary-color: #3498db;
+            --secondary-color: #2ecc71;
+            --dark-color: #2c3e50;
+            --light-color: #ecf0f1;
+            --warning-color: #e74c3c;
+            --info-bg: #e8f4fc;
+            --exercise-bg: #e8f8f5;
+            --material-bg: #fef9e7;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f7fa;
+        }
+        
+        header {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            margin: 0;
+            text-align: center;
+            font-size: 2.2em;
+        }
+        
+        h2 {
+            color: var(--primary-color);
+            margin-top: 40px;
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+        
+        h3 {
+            color: var(--dark-color);
+            margin-top: 25px;
+        }
+        
+        .ejemplo {
+            background-color: var(--info-bg);
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+            border-left: 4px solid var(--primary-color);
+        }
+        
+        .ejercicio {
+            background-color: var(--exercise-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            border-left: 4px solid var(--secondary-color);
+        }
+        
+        .calculadora {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+        
+        .calculadora h4 {
+            margin-top: 0;
+            color: var(--dark-color);
+        }
+        
+        .calculadora input, .calculadora select {
+            padding: 8px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .calculadora button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .calculadora button:hover {
+            background-color: #2980b9;
+        }
+        
+        .resultado {
+            font-weight: bold;
+            margin-top: 15px;
+            padding: 10px;
+            background-color: var(--light-color);
+            border-radius: 4px;
+            color: var(--dark-color);
+        }
+        
+        .respuesta {
+            font-weight: bold;
+            color: var(--secondary-color);
+            font-size: 1.1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 2px 3px rgba(0,0,0,0.1);
+            background-color: white;
+        }
+        
+        th, td {
+            border: 1px solid #ddd;
+            padding: 12px;
+            text-align: left;
+        }
+        
+        th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        .materiales {
+            background-color: var(--material-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .descargar {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            margin: 10px 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+        
+        .descargar:hover {
+            background-color: #27ae60;
+        }
+        
+        .descargar-container {
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .tabs {
+            display: flex;
+            margin-bottom: -1px;
+        }
+        
+        .tab {
+            padding: 10px 20px;
+            background-color: #ddd;
+            border: 1px solid #ccc;
+            border-bottom: none;
+            cursor: pointer;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+        }
+        
+        .tab.active {
+            background-color: white;
+            border-bottom: 1px solid white;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 0 5px 5px 5px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            border-top: 1px solid #ddd;
+            font-size: 0.9em;
+            color: #7f8c8d;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+            
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            table {
+                font-size: 0.9em;
+            }
+            
+            th, td {
+                padding: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>GUÍA COMPLETA DE FINANZAS PARA NO FINANCIEROS</h1>
+    </header>
+    
+    <p>Esta guía está diseñada para personas que no tienen conocimientos previos de finanzas, con el fin de explicar de manera clara los conceptos más importantes y facilitar el aprendizaje. Incluye ejemplos simples, ejercicios prácticos y herramientas interactivas para ayudarte a entender cómo manejar el dinero de manera más efectiva.</p>
+    
+    <h2>1. ¿Qué son las Finanzas?</h2>
+    <p>Las finanzas son el estudio de cómo manejar el dinero. Cuando hablamos de finanzas personales, nos referimos a las decisiones que tomamos sobre cómo ganar, gastar, ahorrar e invertir nuestro dinero. El objetivo principal es asegurarnos de que podamos cubrir nuestras necesidades y también ahorrar para el futuro.</p>
+    
+    <h2>2. Ingresos y Gastos</h2>
+    <p>Para comenzar, es importante entender dos conceptos clave:</p>
+    <ul>
+        <li><strong>Ingresos:</strong> Es todo el dinero que recibes, ya sea por tu trabajo, ventas, o cualquier otra fuente. Por ejemplo, tu salario es un ingreso.</li>
+        <li><strong>Gastos:</strong> Son las cosas en las que gastas tu dinero, como comida, alquiler, servicios y transporte.</li>
+    </ul>
+    
+    <div class="ejemplo">
+        <h3>Ejemplo:</h3>
+        <p>Si trabajas y recibes \$1,000 al mes, ese es tu ingreso. Si, de esos \$1,000, gastas \$600 en alquiler y \$200 en comida, esos son tus gastos.</p>
+    </div>
+    
+    <div class="ejercicio">
+        <h3>Ejercicio: Balance Mensual</h3>
+        <p>Calcula cuánto dinero te queda al final del mes después de cubrir tus gastos.</p>
+        
+        <div class="calculadora">
+            <h4>Calculadora de Balance</h4>
+            <label for="ingresos">Ingresos totales ($):</label>
+            <input type="number" id="ingresos" placeholder="Ej: 1500">
+            
+            <label for="gastos">Gastos totales ($):</label>
+            <input type="number" id="gastos" placeholder="Ej: 1200">
+            
+            <button onclick="calcularBalance()">Calcular</button>
+            
+            <div class="resultado" id="resultadoBalance">
+                Ingresa tus datos y haz clic en "Calcular"
+            </div>
+        </div>
+        
+        <p class="respuesta" id="respuestaBalance"></p>
+    </div>
+    
+    <h2>3. Ahorro: Guardar Dinero para el Futuro</h2>
+    <p><strong>Ahorro</strong> es el dinero que decides no gastar. Guardarlo te ayuda a estar preparado para situaciones imprevistas, como una emergencia o para alcanzar un objetivo, como unas vacaciones.</p>
+    
+    <div class="ejemplo">
+        <h3>Ejemplo:</h3>
+        <p>Supón que decides ahorrar el 10% de tu salario de \$1,000. Es decir, ahorras \$100 cada mes.</p>
+    </div>
+    
+    <div class="ejercicio">
+        <h3>Ejercicio: Calcula tu Ahorro Mensual</h3>
+        <p>Determina cuánto puedes ahorrar cada mes basado en tu salario y el porcentaje que deseas ahorrar.</p>
+        
+        <div class="calculadora">
+            <h4>Calculadora de Ahorro</h4>
+            <label for="salario">Salario mensual ($):</label>
+            <input type="number" id="salario" placeholder="Ej: 1200">
+            
+            <label for="porcentaje">Porcentaje a ahorrar (%):</label>
+            <input type="number" id="porcentaje" placeholder="Ej: 15">
+            
+            <button onclick="calcularAhorro()">Calcular</button>
+            
+            <div class="resultado" id="resultadoAhorro">
+                Ingresa tus datos y haz clic en "Calcular"
+            </div>
+        </div>
+        
+        <p class="respuesta" id="respuestaAhorro"></p>
+    </div>
+    
+    <h2>4. ¿Qué es un Presupuesto?</h2>
+    <p>Un <strong>presupuesto</strong> es simplemente un plan que te ayuda a saber cuánto dinero tienes y cómo vas a gastarlo. El objetivo es que no gastes más de lo que tienes.</p>
+    
+    <div class="ejemplo">
+        <h3>Ejemplo:</h3>
+        <p>Supón que ganas \$1,500 al mes. Si tu presupuesto se distribuye de la siguiente forma:</p>
+        <ul>
+            <li>Alquiler: \$500</li>
+            <li>Comida: \$300</li>
+            <li>Transporte: \$150</li>
+            <li>Ahorro: \$200</li>
+            <li>Diversión: \$100</li>
+        </ul>
+        <p>En total, tus gastos suman \$1,500. Esto significa que estás utilizando todo tu dinero de manera planificada.</p>
+    </div>
+    
+    <div class="ejercicio">
+        <h3>Ejercicio: Planificación Presupuestaria</h3>
+        <p>Calcula cuánto dinero te queda para otros gastos después de cubrir tus necesidades básicas y ahorro.</p>
+        
+        <div class="calculadora">
+            <h4>Calculadora de Presupuesto</h4>
+            <label for="ingresosPresupuesto">Ingresos totales ($):</label>
+            <input type="number" id="ingresosPresupuesto" placeholder="Ej: 1800">
+            
+            <label for="ahorroPresupuesto">Ahorro planeado ($):</label>
+            <input type="number" id="ahorroPresupuesto" placeholder="Ej: 200">
+            
+            <label for="alquiler">Alquiler/Hipoteca ($):</label>
+            <input type="number" id="alquiler" placeholder="Ej: 600">
+            
+            <label for="comida">Comida ($):</label>
+            <input type="number" id="comida" placeholder="Ej: 350">
+            
+            <label for="transporte">Transporte ($):</label>
+            <input type="number" id="transporte" placeholder="Ej: 150">
+            
+            <button onclick="calcularPresupuesto()">Calcular</button>
+            
+            <div class="resultado" id="resultadoPresupuesto">
+                Ingresa tus datos y haz clic en "Calcular"
+            </div>
+        </div>
+        
+        <p class="respuesta" id="respuestaPresupuesto"></p>
+    </div>
+    
+    <h2>5. ¿Qué son las Deudas?</h2>
+    <p>Las <strong>deudas</strong> son sumas de dinero que debes a otras personas o instituciones. Las deudas se deben pagar en un tiempo determinado, y a veces incluyen intereses, lo que hace que termines pagando más dinero del que originalmente pediste.</p>
+    
+    <div class="ejemplo">
+        <h3>Ejemplo:</h3>
+        <p>Si pides un préstamo de \$500 y debes pagarlo en 6 meses, tendrás que devolver los \$500 más los intereses acordados. Es importante tener en cuenta las deudas porque si no las pagas a tiempo, puedes terminar debiendo mucho más dinero.</p>
+    </div>
+    
+    <div class="ejercicio">
+        <h3>Ejercicio: Cálculo de Préstamo</h3>
+        <p>Calcula el monto total a pagar por un préstamo incluyendo intereses.</p>
+        
+        <div class="calculadora">
+            <h4>Calculadora de Préstamo</h4>
+            <label for="montoPrestamo">Monto del préstamo ($):</label>
+            <input type="number" id="montoPrestamo" placeholder="Ej: 1000">
+            
+            <label for="tasaInteres">Tasa de interés anual (%):</label>
+            <input type="number" id="tasaInteres" placeholder="Ej: 10">
+            
+            <label for="plazo">Plazo (años):</label>
+            <input type="number" id="plazo" placeholder="Ej: 1">
+            
+            <button onclick="calcularPrestamo()">Calcular</button>
+            
+            <div class="resultado" id="resultadoPrestamo">
+                Ingresa tus datos y haz clic en "Calcular"
+            </div>
+        </div>
+        
+        <p class="respuesta" id="respuestaPrestamo"></p>
+    </div>
+    
+    <h2>6. Asegura tu Futuro: Inversión</h2>
+    <p><strong>Inversión</strong> es poner tu dinero en algo que, con el tiempo, te generará más dinero. Las inversiones pueden ser acciones, bienes raíces, o incluso un negocio. Invertir es una forma de hacer que tu dinero trabaje para ti.</p>
+    
+    <div class="ejemplo">
+        <h3>Ejemplo:</h3>
+        <p>Supón que decides invertir \$500 en comprar acciones de una empresa. Si las acciones suben de valor, podrás venderlas y ganar más dinero del que invertiste.</p>
+    </div>
+    
+    <div class="ejercicio">
+        <h3>Ejercicio: Valor de Inversión</h3>
+        <p>Calcula el valor total de una inversión en acciones.</p>
+        
+        <div class="calculadora">
+            <h4>Calculadora de Inversión</h4>
+            <label for="cantidadAcciones">Cantidad de acciones:</label>
+            <input type="number" id="cantidadAcciones" placeholder="Ej: 10">
+            
+            <label for="precioAccion">Precio por acción ($):</label>
+            <input type="number" id="precioAccion" placeholder="Ej: 50">
+            
+            <button onclick="calcularInversion()">Calcular</button>
+            
+            <div class="resultado" id="resultadoInversion">
+                Ingresa tus datos y haz clic en "Calcular"
+            </div>
+        </div>
+        
+        <p class="respuesta" id="respuestaInversion"></p>
+    </div>
+    
+    <div class="materiales">
+        <h2>7. Materiales y Plantillas</h2>
+        <p>Para ayudarte a aplicar estos conceptos de manera práctica, descarga nuestras plantillas listas para usar:</p>
+        
+        <div class="descargar-container">
+            <a href="#" class="descargar" onclick="descargarPlantilla('ingresos')">Descargar Plantilla de Ingresos</a>
+            <a href="#" class="descargar" onclick="descargarPlantilla('gastos')">Descargar Plantilla de Gastos</a>
+            <a href="#" class="descargar" onclick="descargarPlantilla('presupuesto')">Descargar Plantilla de Presupuesto</a>
+        </div>
+        
+        <h3>Libros Recomendados:</h3>
+        <ul>
+            <li><strong>"El Hombre Más Rico de Babilonia"</strong>: Un clásico libro sobre cómo ahorrar e invertir.</li>
+            <li><strong>"Padre Rico, Padre Pobre"</strong>: Te enseña cómo cambiar tu mentalidad para alcanzar la libertad financiera.</li>
+        </ul>
+    </div>
+    
+    <h2>ANEXOS: Plantillas</h2>
+    
+    <div class="tabs">
+        <div class="tab active" onclick="abrirTab(event, 'ingresosTab')">Ingresos</div>
+        <div class="tab" onclick="abrirTab(event, 'gastosTab')">Gastos</div>
+        <div class="tab" onclick="abrirTab(event, 'presupuestoTab')">Presupuesto</div>
+    </div>
+    
+    <div id="ingresosTab" class="tab-content active">
+        <h3>Plantilla de Ingresos</h3>
+        <table>
+            <tr>
+                <th>Fuente de Ingreso</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+                <th>Observaciones</th>
+            </tr>
+            <tr>
+                <td>Salario</td>
+                <td>\$</td>
+                <td></td>
+                <td>Ejemplo: Salario mensual</td>
+            </tr>
+            <tr>
+                <td>Ingreso Adicional</td>
+                <td>\$</td>
+                <td></td>
+                <td>Ejemplo: Freelance, ventas extras</td>
+            </tr>
+            <tr>
+                <td>Otros Ingresos</td>
+                <td>\$</td>
+                <td></td>
+                <td>Ejemplo: Bonificaciones, regalos</td>
+            </tr>
+            <tr>
+                <td><strong>Total Ingresos</strong></td>
+                <td><strong>\$</strong></td>
+                <td></td>
+                <td><strong>Suma total de los ingresos</strong></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="gastosTab" class="tab-content">
+        <h3>Plantilla de Gastos</h3>
+        <table>
+            <tr>
+                <th>Categoría de Gasto</th>
+                <th>Cantidad</th>
+                <th>Fecha</th>
+                <th>Observaciones</th>
+            </tr>
+            <tr>
+                <td>Alquiler/Hipoteca</td>
+                <td>\$</td>
+                <td></td>
+                <td>Ejemplo: Alquiler mensual</td>
+            </tr>
+            <tr>
+                <td>Comida</td>
+                <td>\$</td>
+                <td></td>
+                <td>Ejemplo: Compra de supermercado</td>
+            </tr>
+            <tr>
+                <td>Transporte</td>
+                <td>\$</td>
+                <td></td>
+                <td>Ejemplo: Gasolina, transporte público</td>
+            </tr>
+            <tr>
+                <td>Servicios (electricidad, agua, etc.)</td>
+                <td>\$</td>
+                <td></td>
+                <td>Ejemplo: Pago mensual de servicios</td>
+            </tr>
+            <tr>
+                <td>Entretenimiento</td>
+                <td>\$</td>
+                <td></td>
+                <td>Ejemplo: Cine, restaurantes, etc.</td>
+            </tr>
+            <tr>
+                <td>Seguro</td>
+                <td>\$</td>
+                <td></td>
+                <td>Ejemplo: Seguro de salud, coche</td>
+            </tr>
+            <tr>
+                <td>Otros Gastos</td>
+                <td>\$</td>
+                <td></td>
+                <td>Ejemplo: Ropa, educación, etc.</td>
+            </tr>
+            <tr>
+                <td><strong>Total Gastos</strong></td>
+                <td><strong>\$</strong></td>
+                <td></td>
+                <td><strong>Suma total de los gastos</strong></td>
+            </tr>
+        </table>
+    </div>
+    
+    <div id="presupuestoTab" class="tab-content">
+        <h3>Plantilla de presupuesto</h3>
+        <table>
+            <tr>
+                <th>Categoría</th>
+                <th>Monto Estimado</th>
+                <th>Monto Real</th>
+                <th>Diferencia</th>
+                <th>Observaciones</th>
+            </tr>
+            <tr>
+                <td>Ingresos</td>
+                <td>\$</td>
+                <td>\$</td>
+                <td>\$</td>
+                <td>Ejemplo: Total de ingresos</td>
+            </tr>
+            <tr>
+                <td>Gastos Fijos</td>
+                <td>\$</td>
+                <td>\$</td>
+                <td>\$</td>
+                <td>Ejemplo: Alquiler, servicios</td>
+            </tr>
+            <tr>
+                <td>Gastos Variables</td>
+                <td>\$</td>
+                <td>\$</td>
+                <td>\$</td>
+                <td>Ejemplo: Comida, entretenimiento</td>
+            </tr>
+            <tr>
+                <td>Ahorro</td>
+                <td>\$</td>
+                <td>\$</td>
+                <td>\$</td>
+                <td>Ejemplo: Porcentaje destinado a ahorro</td>
+            </tr>
+            <tr>
+                <td>Deudas</td>
+                <td>\$</td>
+                <td>\$</td>
+                <td>\$</td>
+                <td>Ejemplo: Pago de préstamos</td>
+            </tr>
+            <tr>
+                <td><strong>Total de Gastos</strong></td>
+                <td><strong>\$</strong></td>
+                <td><strong>\$</strong></td>
+                <td><strong>\$</strong></td>
+                <td><strong>Suma total de los gastos</strong></td>
+            </tr>
+            <tr>
+                <td><strong>Balance (Ingresos-Gastos)</strong></td>
+                <td><strong>\$</strong></td>
+                <td><strong>\$</strong></td>
+                <td><strong>\$</strong></td>
+                <td><strong>Diferencia entre ingresos y gastos</strong></td>
+            </tr>
+        </table>
+    </div>
+    
+    <footer>
+        <p>Guía Completa de Finanzas para No Financieros &copy; 2023 | Todos los derechos reservados</p>
+    </footer>
+
+    <script>
+        // Funciones para las calculadoras
+        function calcularBalance() {
+            const ingresos = parseFloat(document.getElementById('ingresos').value) || 0;
+            const gastos = parseFloat(document.getElementById('gastos').value) || 0;
+            const balance = ingresos - gastos;
+            
+            document.getElementById('resultadoBalance').innerHTML = 
+                `<strong>Balance:</strong> $${ingresos.toFixed(2)} - $${gastos.toFixed(2)} = <span class="respuesta">$${balance.toFixed(2)}</span>`;
+            
+            document.getElementById('respuestaBalance').textContent = 
+                `Respuesta: $${ingresos.toFixed(2)} - $${gastos.toFixed(2)} = $${balance.toFixed(2)}`;
+        }
+        
+        function calcularAhorro() {
+            const salario = parseFloat(document.getElementById('salario').value) || 0;
+            const porcentaje = parseFloat(document.getElementById('porcentaje').value) || 0;
+            const ahorro = salario * (porcentaje / 100);
+            
+            document.getElementById('resultadoAhorro').innerHTML = 
+                `<strong>Ahorro mensual:</strong> $${salario.toFixed(2)} x ${porcentaje}% = <span class="respuesta">$${ahorro.toFixed(2)}</span>`;
+            
+            document.getElementById('respuestaAhorro').textContent = 
+                `Respuesta: $${salario.toFixed(2)} x ${porcentaje}% = $${ahorro.toFixed(2)}`;
+        }
+        
+        function calcularPresupuesto() {
+            const ingresos = parseFloat(document.getElementById('ingresosPresupuesto').value) || 0;
+            const ahorro = parseFloat(document.getElementById('ahorroPresupuesto').value) || 0;
+            const alquiler = parseFloat(document.getElementById('alquiler').value) || 0;
+            const comida = parseFloat(document.getElementById('comida').value) || 0;
+            const transporte = parseFloat(document.getElementById('transporte').value) || 0;
+            
+            const gastosTotales = ahorro + alquiler + comida + transporte;
+            const disponible = ingresos - gastosTotales;
+            
+            document.getElementById('resultadoPresupuesto').innerHTML = `
+                <strong>Ingresos:</strong> $${ingresos.toFixed(2)}<br>
+                <strong>Gastos totales:</strong> $${gastosTotales.toFixed(2)}<br>
+                <strong>Disponible:</strong> <span class="respuesta">$${disponible.toFixed(2)}</span>`;
+            
+            document.getElementById('respuestaPresupuesto').textContent = 
+                `Respuesta: $${ingresos.toFixed(2)} - ($${ahorro.toFixed(2)} + $${alquiler.toFixed(2)} + $${comida.toFixed(2)} + $${transporte.toFixed(2)}) = $${disponible.toFixed(2)}`;
+        }
+        
+        function calcularPrestamo() {
+            const monto = parseFloat(document.getElementById('montoPrestamo').value) || 0;
+            const tasa = parseFloat(document.getElementById('tasaInteres').value) || 0;
+            const plazo = parseFloat(document.getElementById('plazo').value) || 1;
+            
+            const interes = monto * (tasa / 100) * plazo;
+            const total = monto + interes;
+            
+            document.getElementById('resultadoPrestamo').innerHTML = `
+                <strong>Monto del préstamo:</strong> $${monto.toFixed(2)}<br>
+                <strong>Interés (${tasa}% anual por ${plazo} año(s)):</strong> $${interes.toFixed(2)}<br>
+                <strong>Total a pagar:</strong> <span class="respuesta">$${total.toFixed(2)}</span>`;
+            
+            document.getElementById('respuestaPrestamo').textContent = 
+                `Respuesta: $${monto.toFixed(2)} + ${tasa}% = $${total.toFixed(2)}`;
+        }
+        
+        function calcularInversion() {
+            const cantidad = parseFloat(document.getElementById('cantidadAcciones').value) || 0;
+            const precio = parseFloat(document.getElementById('precioAccion').value) || 0;
+            const total = cantidad * precio;
+            
+            document.getElementById('resultadoInversion').innerHTML = 
+                `<strong>Inversión total:</strong> ${cantidad} acciones x $${precio.toFixed(2)} = <span class="respuesta">$${total.toFixed(2)}</span>`;
+            
+            document.getElementById('respuestaInversion').textContent = 
+                `Respuesta: ${cantidad} x $${precio.toFixed(2)} = $${total.toFixed(2)}`;
+        }
+        
+        // Función para las pestañas
+        function abrirTab(evt, tabName) {
+            const tabContents = document.getElementsByClassName("tab-content");
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove("active");
+            }
+            
+            const tabs = document.getElementsByClassName("tab");
+            for (let i = 0; i < tabs.length; i++) {
+                tabs[i].classList.remove("active");
+            }
+            
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+        
+        // Función para descargar plantillas (simulada)
+        function descargarPlantilla(tipo) {
+            let nombreArchivo = '';
+            let contenido = '';
+            
+            switch(tipo) {
+                case 'ingresos':
+                    nombreArchivo = 'plantilla_ingresos.xlsx';
+                    contenido = 'Contenido de la plantilla de ingresos (simulado)';
+                    break;
+                case 'gastos':
+                    nombreArchivo = 'plantilla_gastos.xlsx';
+                    contenido = 'Contenido de la plantilla de gastos (simulado)';
+                    break;
+                case 'presupuesto':
+                    nombreArchivo = 'plantilla_presupuesto.xlsx';
+                    contenido = 'Contenido de la plantilla de presupuesto (simulado)';
+                    break;
+            }
+            
+            // En un entorno real, aquí iría el código para generar o descargar el archivo Excel
+            alert(`Descargando ${nombreArchivo}\n\nEn una implementación real, se descargaría un archivo Excel con la plantilla.`);
+            
+            // Simulación de descarga (no funcional en este ejemplo)
+            // const blob = new Blob([contenido], {type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'});
+            // const link = document.createElement('a');
+            // link.href = URL.createObjectURL(blob);
+            // link.download = nombreArchivo;
+            // link.click();
+        }
+    </script>
+</body>
+</html>
